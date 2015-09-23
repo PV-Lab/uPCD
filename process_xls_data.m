@@ -8,7 +8,7 @@ function process_xls_data(dirname)
 dataSave = cell(m,n);
 
 for i = 1:m
-    %For the OLD spreadsheet format
+    %For the NEW spreadsheet format
     data = xlsread(fileList{i},'RawData','E4:G124');
     lifetime = data(:,1); %seconds
     deltan = data(:,3); %cm^-3
