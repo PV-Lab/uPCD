@@ -9,17 +9,17 @@ dataSave = cell(m,n);
 
 for i = 1:m
     %For the NEW spreadsheet format
-%     data = xlsread(fileList{i},'RawData','E4:G124');
-%     lifetime = data(:,1); %seconds
-%     deltan = data(:,3); %cm^-3
-%     dataSave{i} = [deltan,lifetime];
-%     
-%     %For the OLD spreadsheet
-    data = xlsread(fileList{i},'Calc','L15:S131');
+    data = xlsread(fileList{i},'RawData','E4:G124');
     lifetime = data(:,1); %seconds
-    deltan = data(:,8); %cm^-3
+    deltan = data(:,3); %cm^-3
     dataSave{i} = [deltan,lifetime];
-%     
+    
+    %For the OLD spreadsheet
+%     data = xlsread(fileList{i},'Calc','L15:S131');
+%     lifetime = data(:,1); %seconds
+%     deltan = data(:,8); %cm^-3
+%     dataSave{i} = [deltan,lifetime];
+    
     figure;
     loglog(deltan,lifetime,'.');
     xlabel('Excess carrier density (cm^-^3)','FontSize',20);
